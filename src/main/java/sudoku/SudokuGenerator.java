@@ -34,8 +34,9 @@ public class SudokuGenerator{
 				i++;
 			}
 		}
-		
+		          
 		return puzzle;
+                
 	}
 	
 	
@@ -67,7 +68,7 @@ public class SudokuGenerator{
 						if(backtrackSudokuSolver(0,c + 1,puzzle)) return true;
 					} else {
 						if(backtrackSudokuSolver(r + 1,c,puzzle)) return true;
-					}
+					} 
 				}
 			}
 		}

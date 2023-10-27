@@ -23,22 +23,19 @@ public class SudokuFrame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Sudoku");
 		this.setMinimumSize(new Dimension(800,600));
+                this.setLocation(350,150);
 		
 		JMenuBar menuBar = new JMenuBar();
-		JMenu file = new JMenu("Game");
-		JMenu newGame = new JMenu("New Game");
-		JMenuItem sixBySixGame = new JMenuItem("6 By 6 Game");
-		sixBySixGame.addActionListener(new NewGameListener(SudokuPuzzleType.SIXBYSIX,30));
-		JMenuItem nineByNineGame = new JMenuItem("9 By 9 Game");
-		nineByNineGame.addActionListener(new NewGameListener(SudokuPuzzleType.NINEBYNINE,26));
-		JMenuItem twelveByTwelveGame = new JMenuItem("12 By 12 Game");
-		twelveByTwelveGame.addActionListener(new NewGameListener(SudokuPuzzleType.TWELVEBYTWELVE,20));
+		JMenu file = new JMenu("Reiniciar Sudoku");
+		JMenu newGame = new JMenu("Nuevo Juego");
 		
-	
-		newGame.add(sixBySixGame);
+		
+		JMenuItem nineByNineGame = new JMenuItem("Reiniciar");
+		nineByNineGame.addActionListener(new NewGameListener(SudokuPuzzleType.NINEBYNINE,26));
+             
+
+                
 		newGame.add(nineByNineGame);
-		newGame.add(twelveByTwelveGame);
-	
 		file.add(newGame);
 		menuBar.add(file);
 		this.setJMenuBar(menuBar);
@@ -90,13 +87,15 @@ public class SudokuFrame extends JFrame {
 			rebuildInterface(puzzleType,fontSize);
 		}
 	}
-	
+	//
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				SudokuFrame frame = new SudokuFrame();
+                   System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 				frame.setVisible(true);
+                                
 			}
 		});
 	}
